@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LapStore</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url('tech.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.8);
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .logo-img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 8px;
+    }
+
+    .logo {
+      font-size: 36px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .slogan {
+      font-size: 16px;
+      color: #005fcd;
+      margin-top: 10px;
+    }
+
+    .form-container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-top: 40px;
+    }
+
+    .form-container h2 {
+      color: #005fcd;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .form-container {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <img src="lAP.png" alt="LapStore Logo" class="logo-img" />
+      <div class="logo">LapStore</div>
+      <div class="slogan">Tecnologia ao teu alcance</div>
+    </header>
+
+    <div class="form-container">
+      <h2>Solicita o teu laptop</h2>
+      <div class="input-group">
+        <label for="orcamento">Teu orçamento (MT):</label>
+        <input type="number" id="orcamento" placeholder="Ex: 10000" />
+      </div>
+      <a
+        href="#"
+        class="whatsapp-btn"
+        id="whatsapp-link"
+        target="_blank"
+      >
+        Enviar para o WhatsApp
+      </a>
+    </div>
+
+    <footer>
+      &copy; 2025 LapStore. Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    const orcamentoInput = document.getElementById("orcamento");
+    const whatsappLink = document.getElementById("whatsapp-link");
+
+    orcamentoInput.addEventListener("input", () => {
+      const valor = orcamentoInput.value;
+      const mensagem = `Olá, preciso de um laptop e meu orçamento é ${valor} MT`;
+      const url = `https://wa.me/258847632050?text=${encodeURIComponent(mensagem)}`;
+      whatsappLink.href = url;
+    });
+  </script>
+</body>
+</html>
